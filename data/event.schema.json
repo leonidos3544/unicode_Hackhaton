@@ -1,0 +1,207 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "external_id": {
+      "maxLength": 500,
+      "minLength": 1,
+      "title": "External Id",
+      "type": "string"
+    },
+    "title": {
+      "maxLength": 500,
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "category": {
+      "enum": [
+        "concert",
+        "theatre",
+        "exhibition",
+        "festival",
+        "cinema",
+        "excursion",
+        "other"
+      ],
+      "title": "Category",
+      "type": "string"
+    },
+    "date_start": {
+      "format": "date-time",
+      "title": "Date Start",
+      "type": "string"
+    },
+    "date_end": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Date End"
+    },
+    "duration_min": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "maximum": 525600,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Duration Min"
+    },
+    "city": {
+      "maxLength": 500,
+      "minLength": 1,
+      "title": "City",
+      "type": "string"
+    },
+    "venue": {
+      "maxLength": 500,
+      "minLength": 1,
+      "title": "Venue",
+      "type": "string"
+    },
+    "address": {
+      "maxLength": 500,
+      "minLength": 1,
+      "title": "Address",
+      "type": "string"
+    },
+    "description": {
+      "maxLength": 10000,
+      "minLength": 1,
+      "title": "Description",
+      "type": "string"
+    },
+    "price_min": {
+      "anyOf": [
+        {
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Price Min"
+    },
+    "price_max": {
+      "anyOf": [
+        {
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Price Max"
+    },
+    "is_free": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Is Free"
+    },
+    "age_limit": {
+      "anyOf": [
+        {
+          "enum": [
+            0,
+            6,
+            12,
+            16,
+            18
+          ],
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Age Limit"
+    },
+    "language": {
+      "anyOf": [
+        {
+          "maxLength": 100,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Language"
+    },
+    "tags": {
+      "items": {
+        "maxLength": 100,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 30,
+      "title": "Tags",
+      "type": "array"
+    },
+    "source_url": {
+      "format": "uri",
+      "maxLength": 2083,
+      "minLength": 1,
+      "title": "Source Url",
+      "type": "string"
+    },
+    "org_link": {
+      "anyOf": [
+        {
+          "format": "uri",
+          "maxLength": 2083,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Org Link"
+    }
+  },
+  "required": [
+    "external_id",
+    "title",
+    "category",
+    "date_start",
+    "city",
+    "venue",
+    "address",
+    "description",
+    "source_url"
+  ],
+  "title": "EventInput",
+  "type": "object"
+}

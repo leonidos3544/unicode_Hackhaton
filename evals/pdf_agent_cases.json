@@ -1,0 +1,254 @@
+{
+  "version": "pdf-appendix-a-1",
+  "scope": "Открытые примеры приложения А; уточнения и ожидаемые условия добавлены разработчиком. Это не скрытая независимая приёмка.",
+  "provenance": {
+    "path": "D:/doc-1794511459.pdf",
+    "sha256": "93142406f3459ba5572375eb32d0983a8e9662d67c0bcf41711aa1f0d1583596",
+    "page": 11,
+    "selection": "Первые 10 примеров уровня 3; пример 7 относится к планировщику уровня 4 и пропущен.",
+    "adaptations": "Исходные вопросы сохранены. Ответы на уточнения, подготовка контекста и gold-фильтры добавлены разработчиком.",
+    "used_during_development": true,
+    "blind_holdout": false
+  },
+  "cases": [
+    {
+      "id": "pdf-a01",
+      "source_number": 1,
+      "turns": [
+        {
+          "message": "Что интересного в Уфе в эти выходные?",
+          "filters": {
+            "city": "Уфа",
+            "date_from": "{saturday}",
+            "date_to": "{after_weekend}"
+          },
+          "no_query": true,
+          "tools_any_of": [
+            "search_events"
+          ]
+        }
+      ],
+      "group": "published_pdf"
+    },
+    {
+      "id": "pdf-a02",
+      "source_number": 2,
+      "turns": [
+        {
+          "message": "Концерт в Стерлитамаке в пятницу после 19:00 до 1500 рублей",
+          "filters": {
+            "city": "Стерлитамак",
+            "category": "concert",
+            "date_from": "{friday_19}",
+            "date_to": "{after_friday}",
+            "price_max": "1500"
+          },
+          "no_query": true,
+          "tools_any_of": [
+            "search_events"
+          ]
+        }
+      ],
+      "group": "published_pdf"
+    },
+    {
+      "id": "pdf-a03",
+      "source_number": 3,
+      "turns": [
+        {
+          "message": "Куда сходить с ребёнком 7 лет в субботу, не дольше двух часов и недорого",
+          "question": "city",
+          "filters": {},
+          "no_actions": true
+        },
+        {
+          "message": "Уфа",
+          "question": "budget",
+          "filters": {
+            "city": "Уфа",
+            "children_ages": [
+              7
+            ],
+            "duration_max_min": 120
+          },
+          "no_actions": true
+        },
+        {
+          "message": "до 1000 рублей на человека",
+          "filters": {
+            "city": "Уфа",
+            "children_ages": [
+              7
+            ],
+            "duration_max_min": 120,
+            "price_max": "1000",
+            "date_from": "{saturday}",
+            "date_to": "{after_saturday}"
+          },
+          "no_query": true,
+          "tools_any_of": [
+            "search_events"
+          ]
+        }
+      ],
+      "group": "published_pdf"
+    },
+    {
+      "id": "pdf-a04",
+      "source_number": 4,
+      "turns": [
+        {
+          "message": "Бесплатные выставки в Уфе до конца месяца",
+          "filters": {
+            "city": "Уфа",
+            "category": "exhibition",
+            "is_free": true,
+            "date_to": "{month_end}"
+          },
+          "no_query": true,
+          "tools_any_of": [
+            "search_events"
+          ]
+        }
+      ],
+      "group": "published_pdf"
+    },
+    {
+      "id": "pdf-a05",
+      "source_number": 5,
+      "setup_note": "Предварительная реплика добавлена разработчиком: исходный вопрос зависит от контекста.",
+      "turns": [
+        {
+          "message": "Концерты в Уфе",
+          "filters": {
+            "city": "Уфа",
+            "category": "concert"
+          },
+          "no_query": true,
+          "tools_any_of": [
+            "search_events"
+          ]
+        },
+        {
+          "message": "А что ещё есть похожее, но ближе к центру?",
+          "question": "origin",
+          "filters": {},
+          "no_actions": true
+        }
+      ],
+      "group": "published_pdf"
+    },
+    {
+      "id": "pdf-a06",
+      "source_number": 6,
+      "turns": [
+        {
+          "message": "Отменили ли спектакль 14 ноября?",
+          "question": "city",
+          "filters": {},
+          "no_actions": true
+        },
+        {
+          "message": "Уфа",
+          "question": "event_status",
+          "filters": {
+            "city": "Уфа",
+            "category": "theatre"
+          },
+          "no_actions": true
+        }
+      ],
+      "group": "published_pdf"
+    },
+    {
+      "id": "pdf-a08",
+      "source_number": 8,
+      "turns": [
+        {
+          "message": "Есть ли в Салавате джаз на следующей неделе?",
+          "question": "city_unavailable",
+          "filters": {},
+          "no_actions": true
+        }
+      ],
+      "group": "published_pdf"
+    },
+    {
+      "id": "pdf-a09",
+      "source_number": 9,
+      "turns": [
+        {
+          "message": "Концерт в стерлитакмае в субботу",
+          "filters": {
+            "city": "Стерлитамак",
+            "category": "concert",
+            "date_from": "{saturday}",
+            "date_to": "{after_saturday}"
+          },
+          "no_query": true,
+          "tools_any_of": [
+            "search_events"
+          ]
+        }
+      ],
+      "group": "published_pdf"
+    },
+    {
+      "id": "pdf-a10",
+      "source_number": 10,
+      "turns": [
+        {
+          "message": "Мероприятия на башкирском языке для детей",
+          "question": "city",
+          "filters": {},
+          "no_actions": true
+        },
+        {
+          "message": "Уфа",
+          "question": "child_age",
+          "filters": {},
+          "no_actions": true
+        },
+        {
+          "message": "8 лет",
+          "filters": {
+            "city": "Уфа",
+            "language": "башкирский",
+            "children_ages": [
+              8
+            ]
+          },
+          "no_query": true,
+          "tools_any_of": [
+            "search_events"
+          ]
+        }
+      ],
+      "group": "published_pdf"
+    },
+    {
+      "id": "pdf-a11",
+      "source_number": 11,
+      "turns": [
+        {
+          "message": "Сколько стоит билет на ближайший балет?",
+          "question": "city",
+          "filters": {},
+          "no_actions": true
+        },
+        {
+          "message": "Уфа",
+          "filters": {
+            "city": "Уфа",
+            "query": "балет"
+          },
+          "no_query": false,
+          "tools_any_of": [
+            "search_events"
+          ]
+        }
+      ],
+      "group": "published_pdf"
+    }
+  ]
+}

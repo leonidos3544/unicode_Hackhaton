@@ -1,0 +1,37 @@
+{
+  "version": "agent-followups-1",
+  "scope": "Targeted checks after fixes; not a substitute for the original 60-case run",
+  "cases": [
+    {
+      "id": "followup-duration",
+      "group": "targeted_fix",
+      "turns": [{
+        "message": "Концерты в Уфе не дольше 2 часов",
+        "filters": {"city": "Уфа", "category": "concert", "duration_max_min": 120},
+        "no_query": true,
+        "tools_any_of": ["search_events"]
+      }]
+    },
+    {
+      "id": "followup-children",
+      "group": "targeted_fix",
+      "turns": [{
+        "message": "Спектакли в Уфе: дети 6 и 10 лет, до 1000 рублей на человека",
+        "filters": {"city": "Уфа", "category": "theatre", "children_ages": [6, 10], "price_max": 1000},
+        "no_query": true,
+        "tools_any_of": ["search_events"]
+      }]
+    },
+    {
+      "id": "followup-similar",
+      "group": "tool_coverage",
+      "turns": [{
+        "message": "Найди похожие на событие {event_id} в Уфе",
+        "filters": {"city": "Уфа"},
+        "excluded_id": "{event_id}",
+        "no_query": true,
+        "tools_any_of": ["find_similar"]
+      }]
+    }
+  ]
+}

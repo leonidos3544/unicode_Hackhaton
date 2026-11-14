@@ -1,0 +1,375 @@
+{
+  "created_at": "2026-11-14T07:37:13.463332+00:00",
+  "parser_version": "official-html-v2",
+  "sources": [
+    {
+      "source_id": "bashgf",
+      "name": "Башкирская государственная филармония имени Хусаина Ахметова",
+      "venue": {
+        "name": "Башкирская государственная филармония имени Хусаина Ахметова",
+        "city": "Уфа",
+        "address": "Уфа, ул. Гоголя, 58",
+        "source_url": "https://bashgf.ru/",
+        "verified": true,
+        "verified_at": "2026-11-14T07:36:27.822728+00:00"
+      },
+      "event_count": 24,
+      "pages": [
+        {
+          "url": "https://bashgf.ru/",
+          "sha256": "18567a5f6672653f8eff15ad9cbae25be0de4b4965da9414aff80876c236d054",
+          "fetched_at": "2026-11-14T07:36:27.822728+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/2026/11/",
+          "sha256": "4ce3fa74fdb578b3378e0390bb310faf98c0fb064839359915c5720a8be32081",
+          "fetched_at": "2026-11-14T07:36:28.658710+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/2026/12/",
+          "sha256": "260f42845303d1ab5c9dc5c31dd2c367b04322f7bbbe7fa25717c41bbc9ab277",
+          "fetched_at": "2026-11-14T07:36:29.676945+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/jubilejnyj-koncert-azamata-hasanshina/",
+          "sha256": "9373dd9785131c483770ffcb6f06d26c4449df723ea6a95757bbc08bb4d6b7fd",
+          "fetched_at": "2026-11-14T07:36:30.379118+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/muzyka-rozhdennaja-vetrom-vi-mezhdunarodnyj-jetnicheskij-festival/",
+          "sha256": "ee44dcfe07cb56193449faa18249cc1e8746d64636057b628875ac293b9dace6",
+          "fetched_at": "2026-11-14T07:36:31.068499+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/muzyka-rozhdennaja-vetrom-vi-mezhdunarodnyj-jetnicheskij-festival-2/",
+          "sha256": "bec454c76a77bf7d5e84d8d5e9fab1be63bf726bde80ffe57b17e186cf407baa",
+          "fetched_at": "2026-11-14T07:36:31.764557+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/a-kapella-gruppa-pljusfajv/",
+          "sha256": "90a31ff010c13d3b2dfee5a5653c696aa00e5207324274d5e061e057a36de0ca",
+          "fetched_at": "2026-11-14T07:36:32.428689+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/ansambl-russkih-narodnyh-instrumentov-zabava-2/",
+          "sha256": "bfd925d94e962525d4786645aaaa8fd515d11d1ddf5f86f75e8d2ca003d1f0f5",
+          "fetched_at": "2026-11-14T07:36:33.125482+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/muzyku-slushaem-vmeste-89/",
+          "sha256": "29665a9bc5a52f78a7b2ae7da69b03f7db631bbb8e5137aa83891a775885b2ff",
+          "fetched_at": "2026-11-14T07:36:33.806702+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/jubilejnyj-koncert-gali-altynbaeva-i-nazify-kadyrovoj/",
+          "sha256": "25dc2c795ef08773ef9d2a1664b0c10aafb17fada3423b84589ed78da24d0c97",
+          "fetched_at": "2026-11-14T07:36:34.484225+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/devochka-devushka-zhenshhina/",
+          "sha256": "1d1e9cee943a5d5f8131e09f867c49c578fd0abec718a1ba902250537ca06690",
+          "fetched_at": "2026-11-14T07:36:35.144544+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/lilija-ishemjarova-jubilejnyj-koncert/",
+          "sha256": "fdbbd5028f59e74fe52b1161e44dd1a806b76274e79507323121b91c96283752",
+          "fetched_at": "2026-11-14T07:36:35.816700+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/aleksej-ljudevig-i-kamernyj-orkestr/",
+          "sha256": "024853779953b233c0b86fb8fc11fcc18f1979cd6b25b35b9633bfa32ac940ba",
+          "fetched_at": "2026-11-14T07:36:36.481549+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/virtuozy-rossii-vremena-goda-vivaldi/",
+          "sha256": "29302d6872484ce9b034dba68a93ade984b8907b73c9429758a822e8215c5bb9",
+          "fetched_at": "2026-11-14T07:36:37.160940+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/skazki-djadjushki-organa-gadkij-utenok/",
+          "sha256": "19e6d968afa44fbc71d4391bdfdb2c6bb9917033e07672dbb26b725fc92aed96",
+          "fetched_at": "2026-11-14T07:36:37.833702+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/sijavush-shermatov-i-big-bend/",
+          "sha256": "17ea4671d21b8e864db509cf7f82cecde7983ec38153ac4707cf3e57bc9759a4",
+          "fetched_at": "2026-11-14T07:36:38.518122+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/muzyku-slushaem-vmeste-87/",
+          "sha256": "ccdcd084cb9e07b37343bce1920acbc7287264a47a7c9586b65f36e6b11b32c1",
+          "fetched_at": "2026-11-14T07:36:39.184844+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/hor-dzhaz-rok-n-roll/",
+          "sha256": "914b88e5a173f153bd0c05035da057ed51889c8cc70ff1475ef69e66bba59b9d",
+          "fetched_at": "2026-11-14T07:36:39.843752+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/zimnij-vecher-s-klassikoj/",
+          "sha256": "d3e513b4d549c76807649dee08099a260381a64715a44bb58fce1629030d56e3",
+          "fetched_at": "2026-11-14T07:36:40.581523+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/bajan-bez-granic/",
+          "sha256": "84e58b41b39e52ba62112e30bf06af5200ac706fc459527a291b3c95911a2591",
+          "fetched_at": "2026-11-14T07:36:41.253764+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/muzyku-slushaem-vmeste-88/",
+          "sha256": "cdfe0fe65b081c550951e069b7f30586eda49adb1f4de94fbfec8074fb7975c9",
+          "fetched_at": "2026-11-14T07:36:41.935313+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/ilarija-chentorrino-organ-italija-sauerfest/",
+          "sha256": "91748179d4be531961f3272bfe25482eb9fcda10334cbc4b4a650f1d8a867b02",
+          "fetched_at": "2026-11-14T07:36:42.604331+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/slovo-melodija-dushi/",
+          "sha256": "da8f1df6e44b8d72bed345ca264b6e93e6456bde5b3066f1e5c51cd68e3ffe3e",
+          "fetched_at": "2026-11-14T07:36:43.274430+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/koncert-festival-pamjati-vasilja-hannanova/",
+          "sha256": "2e9472430b7d4749dd5320ac011c5273923413c188c2ed125bbd0ef5eead50b4",
+          "fetched_at": "2026-11-14T07:36:43.960229+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/novogodnij-utrennik-13/",
+          "sha256": "57952cfc0f08cf438f511bdf2c4e1e1224b8a5223d852e2a58e80cd72ce726b5",
+          "fetched_at": "2026-11-14T07:36:44.651130+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/novogodnij-utrennik-23/",
+          "sha256": "aa286e683fe64a6e860fc94ce0a8727db6014c90461410ef8cc3874524fa0cbf",
+          "fetched_at": "2026-11-14T07:36:45.322438+00:00"
+        },
+        {
+          "url": "https://bashgf.ru/afisha/event/novogodnij-utrennik-24/",
+          "sha256": "e514d5e67117d6e47b4690494eb0e7e14891ffa089e7d3c247a630d4ef862499",
+          "fetched_at": "2026-11-14T07:36:46.015198+00:00"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "source_id": "sgtko",
+      "name": "Стерлитамакское государственное театрально-концертное объединение",
+      "venue": {
+        "name": "Стерлитамакское государственное театрально-концертное объединение",
+        "city": "Стерлитамак",
+        "address": "Стерлитамак, проспект Ленина, 30В",
+        "source_url": "https://sgtko.ru/",
+        "verified": true,
+        "verified_at": "2026-11-14T07:36:49.700786+00:00"
+      },
+      "event_count": 10,
+      "pages": [
+        {
+          "url": "https://sgtko.ru/",
+          "sha256": "b57a2e09005cbe177a942a6b7f48e895eda6c3f01b554682c1ab1cf299e00571",
+          "fetched_at": "2026-11-14T07:36:49.700786+00:00"
+        },
+        {
+          "url": "https://sgtko.ru/afisha/event/spektakl-h-jb-sh-t-r-urynba-ary-m-st-r-est-tovarishh-nachalnik/",
+          "sha256": "a0b79ddb8fc460430d32ca7bb31374fa0dac341a8c0d55fb35c967f92474985a",
+          "fetched_at": "2026-11-14T07:36:50.448240+00:00"
+        },
+        {
+          "url": "https://sgtko.ru/afisha/event/muzykalnaja-programma-po-doroge-s-oblakami/",
+          "sha256": "9260641af0738cb7cc9cc41d14a26c49e8a72e4b23c5d2aa295935de94b99673",
+          "fetched_at": "2026-11-14T07:36:50.982873+00:00"
+        },
+        {
+          "url": "https://sgtko.ru/afisha/event/spektakl-ljubov-i-golubi-m-h-bb-t-m-k-g-rsend-r-7/",
+          "sha256": "413672f246e7787a7d1067c866a838dfe995ebe6c459d9e3671aa463b50e2549",
+          "fetched_at": "2026-11-14T07:36:51.540032+00:00"
+        },
+        {
+          "url": "https://sgtko.ru/afisha/event/spektakl-janyp-ng-n-mer-r-ne-pokidaj-menja/",
+          "sha256": "a6ce3d96eb059551eff3454ca321f580fe7ce1f2ae5f019913f53bdaf40236af",
+          "fetched_at": "2026-11-14T07:36:52.070105+00:00"
+        },
+        {
+          "url": "https://sgtko.ru/afisha/event/spektakl-dil-fr-zg-d-rt-kej-chetyre-zheniha-dlja-diljafruz-11/",
+          "sha256": "947b1a8c1b6747abca328d7da93c317d97e6feecdf1f623e790a0dda4113b3fa",
+          "fetched_at": "2026-11-14T07:36:52.606844+00:00"
+        },
+        {
+          "url": "https://sgtko.ru/afisha/event/skazka-snezhnaja-koroleva-3/",
+          "sha256": "4824121158f50183a947f842dc175e20967230a7d999dbfe6e2ed4c7b82a98e4",
+          "fetched_at": "2026-11-14T07:36:53.149900+00:00"
+        },
+        {
+          "url": "https://sgtko.ru/afisha/event/komedija-jat-a-birer-j-rem-ju-dve-zhenshhiny-9/",
+          "sha256": "0259bbc422423a9a831702587df50e81917721d3f8f8b5db03b64e84c9183dbc",
+          "fetched_at": "2026-11-14T07:36:53.701961+00:00"
+        },
+        {
+          "url": "https://sgtko.ru/afisha/event/koncert-ber-m-haly-il-ter-ge-my-narod-i-my-ediny-druzhboj-my-nepobedimy/",
+          "sha256": "907902b98ad5b7a26112044ab193cded6b4e53968e186b24bc3ed7def7643400",
+          "fetched_at": "2026-11-14T07:36:54.241543+00:00"
+        },
+        {
+          "url": "https://sgtko.ru/afisha/event/spektakl-je-l-jbe-y-y-sib-ren-gde-ty-devushka-krasavica/",
+          "sha256": "08c98496e24fb2121dc73489b1c0012dfe07c6df443bb6e62cd29db9e2a738d6",
+          "fetched_at": "2026-11-14T07:36:54.770058+00:00"
+        },
+        {
+          "url": "https://sgtko.ru/afisha/event/muzykalnaja-programma-lisa-pljasunja-2/",
+          "sha256": "0a0dbd5cac954a8b67c9114d01c55c9d89bebe7aec59af85ff472e479b2d09ed",
+          "fetched_at": "2026-11-14T07:36:55.305383+00:00"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "source_id": "rusdram-ufa",
+      "name": "Государственный академический русский драматический театр Республики Башкортостан",
+      "venue": {
+        "name": "Государственный академический русский драматический театр Республики Башкортостан",
+        "city": "Уфа",
+        "address": "Уфа, проспект Октября, 79",
+        "source_url": "https://kulturarb.ru/ru/teatry/gosudarstvennyj-akademicheskij-russkij-dramaticheskij-teatr-respubliki-bashkortostan",
+        "verified": true,
+        "verified_at": "2026-11-14T07:36:56.680738+00:00"
+      },
+      "event_count": 49,
+      "pages": [
+        {
+          "url": "https://kulturarb.ru/ru/teatry/gosudarstvennyj-akademicheskij-russkij-dramaticheskij-teatr-respubliki-bashkortostan",
+          "sha256": "13f7fe520aa31485a26a4562b5beb44b57ffe371da8b4a01c0008056391a6abf",
+          "fetched_at": "2026-11-14T07:36:56.680738+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/",
+          "sha256": "91507b31913f1e6c532d66483206b8115687b072016e2de118f791155195f8a3",
+          "fetched_at": "2026-11-14T07:36:57.988623+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/dvoe.html",
+          "sha256": "3c67888199916b795a9e8a8bfe5eba0d6a98c85ab34918e9e6a83f20b43790b1",
+          "fetched_at": "2026-11-14T07:36:59.350058+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/prichal.html",
+          "sha256": "6ad062416ee3e20984810fa2b3c0ce035a8b312ed0da3489a4320a8ee95d5efa",
+          "fetched_at": "2026-11-14T07:36:59.847518+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/dzhek.html",
+          "sha256": "e7f1bac75c495715746c5f9a174b3a3be8b5d9a52270625ea3d1fa6c7f1cd196",
+          "fetched_at": "2026-11-14T07:37:00.344500+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/palata-biznes-klassa.html",
+          "sha256": "af434e4ab9d663dee723cee42f84be5610a0aff0e496ed77aeb68dcb9f8ec61d",
+          "fetched_at": "2026-11-14T07:37:00.841341+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/staryiy-dom.html",
+          "sha256": "332f841b8db848f1c115432f45cd3e5768e802e4633eec08e2f29353ce2ff4ed",
+          "fetched_at": "2026-11-14T07:37:01.308219+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/proshlyim-letom-v-chulimske.html",
+          "sha256": "e4b1241a3a6941cbdf916313290fad0aee02c2b7d86a37ff9af9639e9e291d1a",
+          "fetched_at": "2026-11-14T07:37:01.789200+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/vosem-lyubyaschih-zhenschin.html",
+          "sha256": "255bab1ba03118ccd6af8e691b24f89ea1f6ed4a1d057253451cd3da846b1afd",
+          "fetched_at": "2026-11-14T07:37:02.291723+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/les.html",
+          "sha256": "20fd4b321a830ac9cd51a441bd7040b7d0a6212902985c5892d149cad08e2554",
+          "fetched_at": "2026-11-14T07:37:02.775267+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/maskarad.html",
+          "sha256": "e34f69aaae66dbc6fbf53c6a6c068322124fdd368ed3e9c748a072914e2ab17d",
+          "fetched_at": "2026-11-14T07:37:03.250993+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/sobranie-sochineniy.html",
+          "sha256": "168fb071713526644aa326f01761879922215956f55808f6976129d634fbc695",
+          "fetched_at": "2026-11-14T07:37:03.782569+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/evgeniy-grishkovec-horoshaya-lekciya.html",
+          "sha256": "3797ecbb31d36c548c506158ad2f06f481eae2e5252bf4b7d1953bb2fcf05110",
+          "fetched_at": "2026-11-14T07:37:04.265710+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/geroy-nashego-vremeni.html",
+          "sha256": "b94400abee917867f555ae3a6568319ebab9b58e84d829c5f876d2c242d87b29",
+          "fetched_at": "2026-11-14T07:37:04.747589+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/gore-ot-uma.html",
+          "sha256": "d47d02b9d4fb86ab13e756a363fe664523de3691ee75e64de72678ff1bfb5b4d",
+          "fetched_at": "2026-11-14T07:37:05.228190+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/golubaya-kameya.html",
+          "sha256": "a8417003831b088938c30da58cc64b9f1824a2b30d15b760845853ec815ef044",
+          "fetched_at": "2026-11-14T07:37:05.715344+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/prestuplenie-i-nakazanie.html",
+          "sha256": "b0a90f8dcb5449cff73328162a7196192ab41a73e9c747e6c31724a43cba7b59",
+          "fetched_at": "2026-11-14T07:37:06.220773+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/vrednyiy-element.html",
+          "sha256": "e7de9b728f516ee61056d6dbea8dc9a9f878e11a0613aa54aaa4d4950c9d10aa",
+          "fetched_at": "2026-11-14T07:37:06.708535+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/beshenyie-dengi.html",
+          "sha256": "0d0f674b9f1a931ad51be0e0855d0ec8eec9162b0d89da09e83eba1ca03c3edd",
+          "fetched_at": "2026-11-14T07:37:07.208458+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/hitraya-vdova.html",
+          "sha256": "e54e410c088ea848e0d487562a4743aca01000ff3556198f8b4a9746ce3d6c7d",
+          "fetched_at": "2026-11-14T07:37:08.775844+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/burya.html",
+          "sha256": "baf6852400b1213f47120f9cf03e96d69d2aebf8fd1eee476e97e5a8b31e8c7d",
+          "fetched_at": "2026-11-14T07:37:09.349616+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/konek-gorbunok.html",
+          "sha256": "ef2cb61108f816334fad860ed00bb43326be69aa2df675ff079cbd698e590c2b",
+          "fetched_at": "2026-11-14T07:37:09.948889+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/vyishel-angel-iz-tumana.html",
+          "sha256": "b77211c572ca1f98d76d768880a9294087de0cda4cd386d5b10d3f1a26b5f09f",
+          "fetched_at": "2026-11-14T07:37:10.501405+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/metel.html",
+          "sha256": "96126cf752ac15adbd649e809e6ebc161b3d2a98403d21597dcd8d5f73fb0b52",
+          "fetched_at": "2026-11-14T07:37:11.027235+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/volshebnik-izumrudnogo-goroda.html",
+          "sha256": "09f36d3cafb5c98083fdc2c5b3cd50f5cbcd209efcc0be2281e9f8e21347fc90",
+          "fetched_at": "2026-11-14T07:37:11.506199+00:00"
+        },
+        {
+          "url": "https://rusdram.ru/spektakli/poka-ona-umirala.html",
+          "sha256": "4369a893a1cc7f678b6e665b0c1eee8fb9f8dff66eeea249b359f018cb5ed3b5",
+          "fetched_at": "2026-11-14T07:37:12.145126+00:00"
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "note": "Открытые афиши: снимок на дату проверки. Будущая актуальность не гарантируется."
+}

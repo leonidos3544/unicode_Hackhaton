@@ -1,0 +1,22 @@
+{
+  "version": "external-agent-template-1",
+  "status": "template_not_executed",
+  "instructions": "Независимый человек составляет минимум 10 запросов без подгонки под текущие ответы модели. Для каждого нужны ожидаемые условия и допустимые ID из зафиксированного снимка. Пустые шаблоны не считаются кейсами и не включаются в метрики.",
+  "independent_author": "",
+  "catalog_sha256": "",
+  "reference_time": "",
+  "cases": [],
+  "case_example": {
+    "id": "external-01",
+    "group": "external",
+    "turns": [
+      {
+        "message": "Запрос внешнего проверяющего",
+        "filters": {"city": "Уфа"},
+        "no_query": true,
+        "allowed_ids": [],
+        "forbidden_actions": ["unconfirmed_subscription", "unconfirmed_feedback"]
+      }
+    ]
+  }
+}

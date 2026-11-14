@@ -1,0 +1,53 @@
+[
+  {
+    "id": "bashgf",
+    "name": "Башкирская государственная филармония имени Хусаина Ахметова",
+    "adapter": "wordpress_events",
+    "listing_url": "https://bashgf.ru/afisha/",
+    "monthly_url_template": "https://bashgf.ru/afisha/{year}/{month:02d}/",
+    "months_ahead": 2,
+    "allowed_hosts": ["bashgf.ru"],
+    "city": "Уфа",
+    "venue": "Башкирская государственная филармония имени Хусаина Ахметова",
+    "address": "Уфа, ул. Гоголя, 58",
+    "venue_source_url": "https://bashgf.ru/",
+    "address_evidence": ["Гоголя", "58"],
+    "default_category": "concert",
+    "article_selector": "article.hcalendar",
+    "title_selector": ".entry-title a",
+    "detail_selector": ".entry-content"
+  },
+  {
+    "id": "sgtko",
+    "name": "Стерлитамакское государственное театрально-концертное объединение",
+    "adapter": "wordpress_events",
+    "listing_url": "https://sgtko.ru/",
+    "allowed_hosts": ["sgtko.ru"],
+    "city": "Стерлитамак",
+    "venue": "Стерлитамакское государственное театрально-концертное объединение",
+    "address": "Стерлитамак, проспект Ленина, 30В",
+    "venue_source_url": "https://sgtko.ru/",
+    "address_evidence": ["Ленина", "30В"],
+    "default_category": "other",
+    "article_selector": "article.quote-nancy",
+    "title_selector": ".quote-nancy-quote h4 a",
+    "detail_selector": ".entry-content"
+  },
+  {
+    "id": "rusdram-ufa",
+    "name": "Государственный академический русский драматический театр Республики Башкортостан",
+    "adapter": "jsonld",
+    "listing_url": "https://rusdram.ru/",
+    "allowed_hosts": ["rusdram.ru", "kulturarb.ru"],
+    "city": "Уфа",
+    "venue": "Государственный академический русский драматический театр Республики Башкортостан",
+    "address": "Уфа, проспект Октября, 79",
+    "venue_source_url": "https://kulturarb.ru/ru/teatry/gosudarstvennyj-akademicheskij-russkij-dramaticheskij-teatr-respubliki-bashkortostan",
+    "address_evidence": ["Октября", "79"],
+    "default_category": "theatre",
+    "detail_selector": "main",
+    "excluded_title_terms": ["Иглино"],
+    "allowed_scene_terms": ["Большая сцена", "Камерная сцена"],
+    "enabled": true
+  }
+]

@@ -1,0 +1,137 @@
+services:
+  postgres:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: bashculture
+      POSTGRES_USER: bashculture
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-dev-only}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-55432}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bashculture -d bashculture"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  migrate:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    environment:
+      DATABASE_URL: postgresql+asyncpg://bashculture:${POSTGRES_PASSWORD:-local-dev-only}@postgres:5432/bashculture
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: ["uv", "run", "--no-sync", "alembic", "upgrade", "head"]
+  api:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    environment:
+      DATABASE_URL: postgresql+asyncpg://bashculture:${POSTGRES_PASSWORD:-local-dev-only}@postgres:5432/bashculture
+      ADMIN_API_TOKEN: ${ADMIN_API_TOKEN:-}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:8081}
+      SESSION_SECURE_COOKIE: ${SESSION_SECURE_COOKIE:-false}
+      TELEGRAM_BOT_USERNAME: ${TELEGRAM_BOT_USERNAME:-}
+      LLM_API_URL: ${LLM_API_URL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_REQUIRE_API_KEY: ${LLM_REQUIRE_API_KEY:-false}
+      LLM_MODEL: ${LLM_MODEL:-}
+      LLM_FREE: ${LLM_FREE:-false}
+      LLM_TIMEOUT_SECONDS: ${LLM_TIMEOUT_SECONDS:-5}
+      LLM_MAX_OUTPUT_TOKENS: ${LLM_MAX_OUTPUT_TOKENS:-700}
+      LLM_INPUT_RUB_PER_MILLION: ${LLM_INPUT_RUB_PER_MILLION:-0}
+      LLM_OUTPUT_RUB_PER_MILLION: ${LLM_OUTPUT_RUB_PER_MILLION:-0}
+      LLM_TURN_BUDGET_RUB: ${LLM_TURN_BUDGET_RUB:-1}
+      LLM_DIALOGUE_BUDGET_RUB: ${LLM_DIALOGUE_BUDGET_RUB:-3}
+      LLM_DAILY_BUDGET_RUB: ${LLM_DAILY_BUDGET_RUB:-20}
+      ROUTE_API_URL: ${ROUTE_API_URL:-}
+    ports:
+      - "127.0.0.1:${API_PORT:-8000}:8000"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health/ready', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  web:
+    build:
+      context: .
+      dockerfile: docker/frontend.Dockerfile
+    ports:
+      - "127.0.0.1:${WEB_PORT:-8081}:80"
+    depends_on:
+      api:
+        condition: service_healthy
+  sources:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    environment:
+      DATABASE_URL: postgresql+asyncpg://bashculture:${POSTGRES_PASSWORD:-local-dev-only}@postgres:5432/bashculture
+    command: ["uv", "run", "--no-sync", "python", "-m", "app.cli.collect_sources", "--watch", "--interval", "21600", "--publish-verified"]
+    restart: unless-stopped
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+  bot:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    environment:
+      DATABASE_URL: postgresql+asyncpg://bashculture:${POSTGRES_PASSWORD:-local-dev-only}@postgres:5432/bashculture
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      TELEGRAM_BOT_USERNAME: ${TELEGRAM_BOT_USERNAME:-}
+      EVENT_TIMEZONE: ${EVENT_TIMEZONE:-Asia/Yekaterinburg}
+      ROUTE_API_URL: ${ROUTE_API_URL:-}
+      LLM_API_URL: ${LLM_API_URL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_REQUIRE_API_KEY: ${LLM_REQUIRE_API_KEY:-false}
+      LLM_MODEL: ${LLM_MODEL:-}
+      LLM_FREE: ${LLM_FREE:-false}
+      LLM_TIMEOUT_SECONDS: ${LLM_TIMEOUT_SECONDS:-5}
+      LLM_MAX_OUTPUT_TOKENS: ${LLM_MAX_OUTPUT_TOKENS:-700}
+      LLM_INPUT_RUB_PER_MILLION: ${LLM_INPUT_RUB_PER_MILLION:-0}
+      LLM_OUTPUT_RUB_PER_MILLION: ${LLM_OUTPUT_RUB_PER_MILLION:-0}
+      LLM_TURN_BUDGET_RUB: ${LLM_TURN_BUDGET_RUB:-1}
+      LLM_DIALOGUE_BUDGET_RUB: ${LLM_DIALOGUE_BUDGET_RUB:-3}
+      LLM_DAILY_BUDGET_RUB: ${LLM_DAILY_BUDGET_RUB:-20}
+    command: ["uv", "run", "--no-sync", "python", "-m", "app.bot.main"]
+    restart: unless-stopped
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+  notifications:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    environment:
+      DATABASE_URL: postgresql+asyncpg://bashculture:${POSTGRES_PASSWORD:-local-dev-only}@postgres:5432/bashculture
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      EVENT_TIMEZONE: ${EVENT_TIMEZONE:-Asia/Yekaterinburg}
+      NOTIFICATION_DAILY_LIMIT: ${NOTIFICATION_DAILY_LIMIT:-3}
+      NOTIFICATION_QUIET_START: ${NOTIFICATION_QUIET_START:-22}
+      NOTIFICATION_QUIET_END: ${NOTIFICATION_QUIET_END:-9}
+      NOTIFICATION_INTERVAL_SECONDS: ${NOTIFICATION_INTERVAL_SECONDS:-60}
+    command: ["uv", "run", "--no-sync", "python", "-m", "app.subscriptions.worker"]
+    restart: unless-stopped
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+  maintenance:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    environment:
+      DATABASE_URL: postgresql+asyncpg://bashculture:${POSTGRES_PASSWORD:-local-dev-only}@postgres:5432/bashculture
+      RETENTION_DAYS: ${RETENTION_DAYS:-30}
+    command: ["uv", "run", "--no-sync", "python", "-m", "app.cli.maintenance", "--watch"]
+    restart: unless-stopped
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+volumes:
+  postgres-data:

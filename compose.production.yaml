@@ -1,0 +1,117 @@
+name: bashculture
+
+x-backend: &backend
+  build:
+    context: .
+    dockerfile: docker/backend.Dockerfile
+  environment: &backend-env
+    DATABASE_URL: postgresql+asyncpg://bashculture:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env.production}@postgres:5432/bashculture
+    ADMIN_API_TOKEN: ${ADMIN_API_TOKEN:?Set ADMIN_API_TOKEN in .env.production}
+    PUBLIC_BASE_URL: https://${APP_DOMAIN:?Set APP_DOMAIN in .env.production}
+    SESSION_SECURE_COOKIE: "true"
+    EVENT_TIMEZONE: Asia/Yekaterinburg
+    TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+    TELEGRAM_BOT_USERNAME: ${TELEGRAM_BOT_USERNAME:-}
+    LLM_API_URL: ${LLM_API_URL:-}
+    LLM_API_KEY: ${LLM_API_KEY:-}
+    LLM_REQUIRE_API_KEY: ${LLM_REQUIRE_API_KEY:-true}
+    LLM_MODEL: ${LLM_MODEL:-}
+    LLM_FREE: ${LLM_FREE:-false}
+    LLM_TIMEOUT_SECONDS: ${LLM_TIMEOUT_SECONDS:-5}
+    LLM_MAX_OUTPUT_TOKENS: ${LLM_MAX_OUTPUT_TOKENS:-700}
+    LLM_INPUT_RUB_PER_MILLION: ${LLM_INPUT_RUB_PER_MILLION:-0}
+    LLM_OUTPUT_RUB_PER_MILLION: ${LLM_OUTPUT_RUB_PER_MILLION:-0}
+    LLM_TURN_BUDGET_RUB: ${LLM_TURN_BUDGET_RUB:-1}
+    LLM_DIALOGUE_BUDGET_RUB: ${LLM_DIALOGUE_BUDGET_RUB:-3}
+    LLM_DAILY_BUDGET_RUB: ${LLM_DAILY_BUDGET_RUB:-20}
+    ROUTE_API_URL: ${ROUTE_API_URL:-}
+    NOTIFICATION_DAILY_LIMIT: ${NOTIFICATION_DAILY_LIMIT:-3}
+    NOTIFICATION_QUIET_START: ${NOTIFICATION_QUIET_START:-22}
+    NOTIFICATION_QUIET_END: ${NOTIFICATION_QUIET_END:-9}
+    NOTIFICATION_INTERVAL_SECONDS: ${NOTIFICATION_INTERVAL_SECONDS:-60}
+    RETENTION_DAYS: ${RETENTION_DAYS:-30}
+  restart: unless-stopped
+  logging: &logging
+    driver: json-file
+    options:
+      max-size: "10m"
+      max-file: "3"
+  depends_on:
+    migrate:
+      condition: service_completed_successfully
+
+services:
+  postgres:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: bashculture
+      POSTGRES_USER: bashculture
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env.production}
+    volumes:
+      - postgres-data:/var/lib/postgresql
+    restart: unless-stopped
+    logging: *logging
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bashculture -d bashculture"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  migrate:
+    <<: *backend
+    restart: "no"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: ["uv", "run", "--no-sync", "alembic", "upgrade", "head"]
+  api:
+    <<: *backend
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health/ready', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+  web:
+    build:
+      context: .
+      dockerfile: docker/frontend.Dockerfile
+      args:
+        NGINX_CONFIG: docker/nginx.production.conf
+    restart: unless-stopped
+    logging: *logging
+    depends_on:
+      api:
+        condition: service_healthy
+  proxy:
+    image: caddy:2-alpine
+    environment:
+      APP_DOMAIN: ${APP_DOMAIN:?Set APP_DOMAIN in .env.production}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./docker/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    restart: unless-stopped
+    logging: *logging
+    depends_on:
+      web:
+        condition: service_started
+  bot:
+    <<: *backend
+    command: ["uv", "run", "--no-sync", "python", "-m", "app.bot.main"]
+  notifications:
+    <<: *backend
+    command: ["uv", "run", "--no-sync", "python", "-m", "app.subscriptions.worker"]
+  sources:
+    <<: *backend
+    command: ["uv", "run", "--no-sync", "python", "-m", "app.cli.collect_sources", "--watch", "--interval", "21600", "--publish-verified"]
+  maintenance:
+    <<: *backend
+    command: ["uv", "run", "--no-sync", "python", "-m", "app.cli.maintenance", "--watch"]
+
+volumes:
+  postgres-data:
+  caddy-data:
+  caddy-config:

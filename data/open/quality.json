@@ -1,0 +1,23 @@
+{
+  "report_created_at": "2026-11-14T07:45:06.543196+00:00",
+  "dataset_created_at": "2026-11-14T07:37:13.463332+00:00",
+  "parser_version": "official-html-v2",
+  "file_sha256": {
+    "bashgf.json": "7c95ffa4fa3ec47befd04ab8753b4a754a6c027e7cd48259048f657f4106ee34",
+    "sgtko.json": "5195b96ecd2d3a7da645c11934af5c9ad1a5631cd8b45575eea0ec285a0e300e",
+    "rusdram-ufa.json": "5e9ca66d243dd5768d3082e74c3eb888441acf2dc7b5ae5441ba492292beff77"
+  },
+  "validated_records": 83,
+  "source_count": 3,
+  "duplicate_source_ids": 0,
+  "duplicate_session_keys": 0,
+  "unknown_age": 25,
+  "unknown_price": 54,
+  "unknown_price_upper_bound": 65,
+  "unknown_end_time": 61,
+  "planner_complete_records": 1,
+  "date_from": "2026-11-14T13:00:00+00:00",
+  "date_to": "2026-12-30T06:00:00+00:00",
+  "manual_accuracy_evaluation": null,
+  "note": "Автоматическая проверка схемы и дублей ключа. Точность фактов требует ручной сверки; неизвестное не заполняется догадкой."
+}

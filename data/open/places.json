@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Башкирская государственная филармония имени Хусаина Ахметова",
+    "city": "Уфа",
+    "address": "Уфа, ул. Гоголя, 58",
+    "source_url": "https://bashgf.ru/",
+    "verified": true,
+    "verified_at": "2026-11-14T07:36:27.822728+00:00"
+  },
+  {
+    "name": "Стерлитамакское государственное театрально-концертное объединение",
+    "city": "Стерлитамак",
+    "address": "Стерлитамак, проспект Ленина, 30В",
+    "source_url": "https://sgtko.ru/",
+    "verified": true,
+    "verified_at": "2026-11-14T07:36:49.700786+00:00"
+  },
+  {
+    "name": "Государственный академический русский драматический театр Республики Башкортостан",
+    "city": "Уфа",
+    "address": "Уфа, проспект Октября, 79",
+    "source_url": "https://kulturarb.ru/ru/teatry/gosudarstvennyj-akademicheskij-russkij-dramaticheskij-teatr-respubliki-bashkortostan",
+    "verified": true,
+    "verified_at": "2026-11-14T07:36:56.680738+00:00"
+  }
+]
